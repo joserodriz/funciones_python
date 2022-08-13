@@ -9,13 +9,22 @@
 
 # Ejercicios con funciones
 
+from pickle import FALSE, TRUE
+
+
 def promedio(numeros):
     print("Funcion promedio")
     resultado = 0
     # La función promedio recibe como parámetro una
     # lista de números. Con ella calcule el promedio como:
-
-    # promedio = sumatoria_numeros / cantidad_numeros
+    if(len(numeros) == 0):
+        print('La lista no tiene elementos')
+        return FALSE
+    else:
+        cantidad_numeros = len(numeros)
+        sumatoria_numeros = sum(numeros)
+        resultado = sumatoria_numeros / cantidad_numeros
+        return resultado
 
     # Resuelva la sumatoria y la cantidad con las herramientas
     # que desee, recomendamos usar las funciones disponibles
@@ -27,13 +36,12 @@ def promedio(numeros):
     # La función debe contemplar si se le pasa una lista vacia
     # (es decir, de "0" elementos)
 
-    return resultado
-
 
 if __name__ == '__main__':
     print("Bienvenidos a otra clase de Inove con Python")
     
     numeros = [2, 4, 6, 8, 10, 12]
+    #numeros = []
 
     # Alumno: Complete la función "promedio"
 
@@ -41,6 +49,7 @@ if __name__ == '__main__':
     resultado_promedio = promedio(numeros)
 
     # Luego imprimir en pantalla el valor resultante:
-    # print(....)
+    if(resultado_promedio != FALSE):
+        print('El promedio calculado es: {}'.format(resultado_promedio))
 
     print("terminamos")
